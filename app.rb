@@ -2,8 +2,9 @@ require "sinatra/base"
 
 class EngineeringApp < Sinatra::Base
   set :sessions, true
+  set :static, true
 
   get "/" do
-    "Hello, World!"
+    haml :index
   end
 end
