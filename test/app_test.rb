@@ -11,6 +11,6 @@ class MyTest < MiniTest::Unit::TestCase
   def test_index
     get '/'
     assert last_response.ok?
-    assert_equal "Hello, World!", last_response.body
+    assert_match "Bright Funds Engineering Application", last_response.body
   end
 end

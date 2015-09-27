@@ -1,1 +1,18 @@
-Hello, World!2
+%h1 Bright Funds Engineering Application
+%p Please fill out the fields below to apply for our open engineering positions! But beware, something on this page might not be working right. Perhaps you can fix it?
+
+%form{name: "application", method: 'GET', action: '/apply'}
+  %p
+    %label{for: "name"} Name
+    %br
+    %input#name{type: 'text'}
+  %p
+    %label{for: "github-profile-url"} GitHub Profile URL (or link to code samples)
+    %br
+    %input#github-profile-url{type: "text"}
+  %p
+    %label{for: "cover-letter"} Why do you want to work at Bright Funds?
+    %br
+    %textarea#cover-letter
+  %p
+    %input{type: "submit", value: "Submit"}

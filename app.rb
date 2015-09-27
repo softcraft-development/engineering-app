@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "tilt/haml"
 
 class EngineeringApp < Sinatra::Base
   set :sessions, true

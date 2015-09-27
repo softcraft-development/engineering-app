@@ -1,0 +1,13 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  background: lightgreen;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.content {
+  margin: 20px;
+  background: white;
+  border: 1px solid lightgrey;
+  padding: 10px;
+}
