@@ -7,18 +7,20 @@ class SubmissionWorker
       return false
     end
 
+    body = app_body(params)
+
     Mail.deliver do
       to params[:email]
       from ENV["FROM_EMAIL"]
       subject "Engineering Application Recieved"
-      body "Hi there,\nWe've recieved your application. We'll be in touch soon!\n#{app_body(params)}"
+      body "Hi there,\nWe've recieved your application. We'll be in touch soon!\n#{body}"
     end
 
     Mail.deliver do
       from params[:email]
       to ENV["TO_EMAIL"]
       subject "Engineering Application Recieved"
-      body "We've recieved an application.\n#{app_body(params)}"
+      body "We've recieved an application.\n#{body}"
     end
   end
 
@@ -32,9 +34,7 @@ class SubmissionWorker
       }
     )
 
-    puts res
-
-    res == "true"
+    res.body == "true"
   end
 
   def app_body(params)
