@@ -18,7 +18,7 @@ class EngineeringApp < Sinatra::Base
   post "/apply" do
     req :name, :email, :github_profile_url, :cover_letter, "g-recaptcha-response"
     fmt :email, EMAIL_REGEX
-    fmt :github_profile_url, /https?:\/\/(www)?\.github\.com\/.+/
+    fmt :github_profile_url, /https?:\/\/(www\.)?github\.com\/.+/
 
     SubmissionWorker.perform_async(params, request.ip)
 
