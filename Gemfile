@@ -5,6 +5,7 @@ gem "sinatra"
 gem "haml"
 gem "sidekiq"
 gem "mail"
+gem "puma"
 
 group :development do
   gem "minitest"
