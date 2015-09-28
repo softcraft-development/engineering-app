@@ -12,9 +12,10 @@ class SubmissionWorkerTest < Minitest::Test
   end
 
   def test_responds_to_perform
-    SubmissionWorker.new.perform({"g-recaptcha-response" => "12345", email: "noreply@example.com"}, "1.1.1.1")
+    SubmissionWorker.new.perform({"g-recaptcha-response" => "12345", "email": "noreply@example.com"}, "1.1.1.1")
 
     assert 2, Mail::TestMailer.deliveries.length
+    require "pry"; binding.pry
   end
 
   def test_pass_recaptcha?
