@@ -8,7 +8,7 @@ class SubmissionWorkerTest < Minitest::Test
     ENV["TO_EMAIL"] = "to@example.com"
     stub_request(:post, "https://www.google.com/recaptcha/api/siteverify").
       with(body: {secret: "abcd", remoteip: "1.1.1.1", response: "12345"}).
-      to_return(body: "true")
+      to_return(body: "{\"success\": true}")
   end
 
   def test_responds_to_perform

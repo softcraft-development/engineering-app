@@ -1,3 +1,5 @@
+require "json"
+
 class SubmissionWorker
   include Sidekiq::Worker
 
@@ -34,7 +36,7 @@ class SubmissionWorker
       }
     )
 
-    res.body == "true"
+    JSON.parse(res.body)["success"] == true
   end
 
   def app_body(params)
