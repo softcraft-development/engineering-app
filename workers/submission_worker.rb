@@ -2,7 +2,10 @@ class SubmissionWorker
   include Sidekiq::Worker
 
   def perform(params, remote_ip)
-    return false unless pass_recaptcha?(params["g-recaptcha-response"], remote_ip)
+    if pass_recaptcha?(params["g-recaptcha-response"], remote_ip) == false
+      puts "Recaptcha failed! #{params["g-recaptcha-response"]}, #{remote_ip}"
+      return false
+    end
 
     Mail.deliver do
       to params[:email]
@@ -28,6 +31,8 @@ class SubmissionWorker
         response: response
       }
     )
+
+    puts res
 
     res == "true"
   end
