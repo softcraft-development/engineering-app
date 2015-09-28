@@ -25,7 +25,7 @@ when "production"
   require "dalli"
 
   options = {
-    username: ENV["MEMCACHIER_USERNAME"]
+    username: ENV["MEMCACHIER_USERNAME"],
     password: ENV["MEMCACHIER_PASSWORD"]
   }
 
