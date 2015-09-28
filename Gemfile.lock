@@ -46,6 +46,7 @@ GEM
     connection_pool (2.2.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
+    dalli (2.7.4)
     dotenv (2.0.2)
     haml (4.0.7)
       tilt
@@ -90,6 +91,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dalli
   haml
   mail
   minitest

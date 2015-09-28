@@ -21,7 +21,15 @@ when "test"
     delivery_method :test
   end
 when "production"
-  require 'rack/attack'
+  require "rack/attack"
+  require "dalli"
+
+  options = {
+    username: ENV["MEMCACHIER_USERNAME"]
+    password: ENV["MEMCACHIER_PASSWORD"]
+  }
+
+  Rack::Attack.cache.store = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"], options)
 
   class Rack::Attack
     throttle("applications", limit: 5, period: 7200) do |req|

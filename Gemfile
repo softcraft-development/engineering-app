@@ -8,6 +8,7 @@ gem "sidekiq"
 gem "mail"
 gem "puma"
 gem "rack-attack"
+gem "dalli"
 
 group :development do
   gem "minitest"
