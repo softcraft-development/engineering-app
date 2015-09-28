@@ -11,3 +11,10 @@ body, html {
   border: 1px solid lightgrey;
   padding: 10px;
 }
+
+input[type="text"], input[type="email"], textarea {
+  width: calc(100% - 10px);
+  border: 1px solid darkgreen;
+  padding: 3px 5px;
+  outline: none;
+}

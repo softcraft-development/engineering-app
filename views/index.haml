@@ -1,18 +1,26 @@
-%h1 Bright Funds Engineering Application
-%p Please fill out the fields below to apply for our open engineering positions! But beware, something on this page might not be working right. Perhaps you can fix it?
+%h1 Engineering Application
+%p Please fill out the fields below to apply for our open engineering positions! But beware, something on this page might be <strong>broken</strong>. Perhaps you can fix it?
 
-%form{name: "application", method: 'GET', action: '/apply'}
+%script{src: "https://www.google.com/recaptcha/api.js"}
+
+%form{name: "application", method: "GET", action: "/apply", target: "_blank"}
   %p
     %label{for: "name"} Name
     %br
-    %input#name{type: 'text'}
+    %input#name{type: "text", name: "name", required: true}
+  %p
+    %label{for: "email"} Email
+    %br
+    %input#name{type: "email", required: true}
   %p
     %label{for: "github-profile-url"} GitHub Profile URL (or link to code samples)
     %br
-    %input#github-profile-url{type: "text"}
+    %input#github-profile-url{type: "text", name: "github_profile_url", required: true, pattern: "https?://.+"}
   %p
-    %label{for: "cover-letter"} Why do you want to work at Bright Funds?
+    %label{for: "cover-letter"} Why do you want to work with us?
     %br
-    %textarea#cover-letter
+    %textarea#cover-letter{name: "cover_letter", rows: 15, required: true}
+  %p
+    .g-recaptcha{"data-sitekey" => "6Lf6pg0TAAAAALsv0eypI-GEeEwgL1M1SOBAPSYv"}
   %p
     %input{type: "submit", value: "Submit"}
