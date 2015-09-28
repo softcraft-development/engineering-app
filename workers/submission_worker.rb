@@ -16,14 +16,14 @@ class SubmissionWorker
       to params["email"]
       from ENV["FROM_EMAIL"]
       subject "Engineering Application Recieved"
-      body "Hi there,\nWe've recieved your application. We'll be in touch soon!\n#{body}"
+      body "Hi there,<br>We've recieved your application. We'll be in touch soon!<br>#{body}"
     end
 
     Mail.deliver do
       from params["email"]
       to ENV["TO_EMAIL"]
       subject "Engineering Application Recieved"
-      body "We've recieved an application.\n#{body}"
+      body "We've recieved an application.<br>#{body}"
     end
   end
 
@@ -41,6 +41,6 @@ class SubmissionWorker
   end
 
   def app_body(params)
-    "Name: #{params["name"]}\nEmail: #{params["email"]}\nGithub Profile URL: #{params["github_profile_url"]}\nWhy work with us? #{params["cover_letter"]}"
+    "Name: #{params["name"]}<br>Email: #{params["email"]}<br>Github Profile URL: #{params["github_profile_url"]}<br>Why work with us? #{params["cover_letter"]}"
   end
 end
