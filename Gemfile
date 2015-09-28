@@ -7,6 +7,7 @@ gem "haml"
 gem "sidekiq"
 gem "mail"
 gem "puma"
+gem "rack-attack"
 
 group :development do
   gem "minitest"

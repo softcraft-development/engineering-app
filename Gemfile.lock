@@ -58,6 +58,8 @@ GEM
     nenv (0.2.0)
     puma (2.14.0)
     rack (1.6.4)
+    rack-attack (4.3.0)
+      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -92,6 +94,7 @@ DEPENDENCIES
   mail
   minitest
   puma
+  rack-attack
   rack-test
   sidekiq
   sinatra

@@ -21,6 +21,15 @@ when "test"
     delivery_method :test
   end
 when "production"
+  require 'rack/attack'
+
+  class Rack::Attack
+    throttle("applications", limit: 5, period: 7200) do |req|
+      if req.path == "/apply" && req.post?
+        req.ip
+      end
+    end
+  end
 
   Sidekiq.configure_server do |config|
     config.redis = { url: ENV["REDIS_URL"] }
