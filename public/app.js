@@ -1,16 +1,25 @@
-!(function(win, doc){
-  if (typeof(Storage) !== 'undefined') {
-    var KEYS = ["name", "email", "github-profile-url", "cover-letter"];
-    var form = doc.querySelector('form');
+FormStorage = {
+  bind: function(form) {
+    [].forEach.call(form.querySelectorAll('input, textarea'), function(input) {
+      // Return early for inputs we don't want
+      if (["submit"].indexOf(input.getAttribute('type')) > -1)
+        return;
 
-    KEYS.forEach(function(key) {
-      form.querySelector('#'+key).value = localStorage.getItem(key);
-    });
+      var key = input.getAttribute('name') || input.getAttribute('id'); // LocalStorage key
 
-    form.addEventListener('submit', function(ev) {
-      KEYS.forEach(function(key) {
-        localStorage.setItem(key, form.querySelector('#'+key).value);
+      input.value = localStorage.getItem(key); // Set the value at load
+
+      input.addEventListener('input', function(ev) {
+        var val = input.value;
+
+        if (input.validity.valid == true || val == '')
+          localStorage.setItem(key, input.value); // Store the change
       });
+
     });
-  };
-}(window, document))
+  }
+};
+
+!function() {
+  FormStorage.bind(document.querySelector('form'));
+}(FormStorage);
