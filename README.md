@@ -1,5 +1,10 @@
 # Engineering Application Form
-This is an experiment to make applying for a job a better process. It provides a low barier technical challenge to allow submission of the application. Upon successful submission, an email is sent to the applicant and the collector of the applications for futher review.
+This is an experiment to make applying for a job a better process. It provides a low barrier technical challenge to allow submission of the application. Upon successful submission, an email is sent to the applicant and the collector of the applications for further review. Feel free to fork and customize.
+
+## I'm trying to apply through this thing, wtf!
+You're probably noticing that the form isn't submitting correctly. OHNOES!
+
+Well, that's on purpose. There are a few easy fixes that need to take place before you can successfully submit the form. Figure them out, and you're on your way to stardom.... kind of. Check out the source to get the full picture as to what isn't happening. Afraid of losing your entered text? Fear not, if you're on a modern browser we store it in LocalStorage. Don't know what LocalStorage is? Well then, what is it you'd say you're doing here, exactly?
 
 ## Getting started locally
 ```bash
@@ -12,7 +17,7 @@ EMAIL_TO => Who is receiving the emails?
 EMAIL_FROM => Who should the FROM address be for notifications set to the applicant?
 RECAPTCHA_KEY => Google Recaptcha key
 
-Deployment Keys
+### Deployment Keys
 SENDGRID_USERNAME
 SENDGRID_PASSWORD
 REDIS_URL
