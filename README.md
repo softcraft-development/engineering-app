@@ -33,6 +33,8 @@ MEMCACHIER_USERNAME
 
 MEMCACHIER_PASSWORD
 
+## Tests
+`bundle exec rake test`
 
 ## License
 The MIT License (MIT)
