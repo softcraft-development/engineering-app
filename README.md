@@ -8,6 +8,8 @@ Well, that's on purpose. There are a few easy fixes that need to implement befor
 
 Afraid of losing your entered text? Fear not, brave knight! If you're on a modern browser we store it in LocalStorage. Don't know what LocalStorage is? Well then, what is it you'd say you're doing here, exactly?
 
+**Should I submit a PR with the fixes?** No.
+
 ## Getting started locally
 ```bash
 $ bundle install
