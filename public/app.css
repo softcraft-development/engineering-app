@@ -56,7 +56,7 @@ label {
   font-weight: 400;
 }
 
-input[type="text"], input[type="email"], textarea, input:required, textarea:required {
+input[type="text"], input[type="email"], textarea {
   margin-top: 10px;
   width: calc(100% - 10px);
   padding: 8px 5px;
