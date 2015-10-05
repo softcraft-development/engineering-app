@@ -15,20 +15,20 @@ class SubmissionWorker
     Mail.deliver do
       to params["email"]
       from ENV["FROM_EMAIL"]
-      subject "Engineering Application Recieved"
+      subject "Engineering Application Received"
       html_part do
         content_type 'text/html; charset=UTF-8'
-        body "Hi there,<br>We've recieved your application. We'll be in touch soon!<br>#{body}"
+        body "Hi there,<br>We've received your application. We'll be in touch soon!<br>#{body}"
       end
     end
 
     Mail.deliver do
       from params["email"]
       to ENV["TO_EMAIL"]
-      subject "Engineering Application Recieved"
+      subject "Engineering Application Received"
       html_part do
         content_type 'text/html; charset=UTF-8'
-        body "We've recieved an application.<br>#{body}"
+        body "We've received an application.<br>#{body}"
       end
     end
   end
