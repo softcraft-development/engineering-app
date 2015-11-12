@@ -12,7 +12,7 @@ class EngineeringApp < Sinatra::Base
   set :show_exceptions, :after_handler
 
   get "/" do
-    haml :index
+    haml :index, :locals => {:recaptcha_sitekey => ENV["RECAPTCHA_SITEKEY"]}
   end
 
   post "/apply" do
