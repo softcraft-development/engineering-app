@@ -17,9 +17,9 @@ $ puma
 ```
 
 ENV variables:
-`EMAIL_TO` => Who is receiving the emails?
+`TO_EMAIL` => Who is receiving the emails?
 
-`EMAIL_FROM` => Who should the FROM address be for notifications set to the applicant?
+`FROM_EMAIL` => Who should the FROM address be for notifications set to the applicant?
 
 `RECAPTCHA_KEY` => Google Recaptcha key
 
